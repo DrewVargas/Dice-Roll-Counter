@@ -27,7 +27,16 @@ class RollDice extends Component {
   }
 
   handleRoll() {
-    randRoll(this.props.dice);
+    const newRoll = randRoll(this.props.dice);
+    const totalRoll = newRoll.reduce((total, die) => total + die.value, 0);
+    this.setState(st => ({
+      numRoll: st.numRoll + 1,
+      die1: newRoll[0].face,
+      die1Val: newRoll[0].value,
+      die2: newRoll[1].face,
+      die2Val: newRoll[1].value,
+      total: totalRoll
+    }));
   }
   render() {
     return (
