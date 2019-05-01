@@ -40,10 +40,24 @@ class RollDice extends Component {
   }
   render() {
     return (
-      <div>
-        <div>
+      <div className="RollDice-Container">
+        <div className="Die-Container">
           <Die face={this.state.die1} />
           <Die face={this.state.die2} />
+        </div>
+        <div className="Dice-Counter">
+          <h4>
+            Rolls: <span>{this.state.numRoll}</span>
+          </h4>
+          <h4>
+            Die 1: <span>{this.state.die1Val}</span>
+          </h4>
+          <h4>
+            Die 2: <span>{this.state.die2Val}</span>
+          </h4>
+          <h4>
+            Total: <span>{this.state.total}</span>
+          </h4>
         </div>
         <button onClick={this.handleRoll}>Roll Dice</button>
       </div>
