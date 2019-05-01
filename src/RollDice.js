@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Die from './Die';
 import { randRoll } from './Helper';
+import './RollDice.css';
 
 class RollDice extends Component {
   static defaultProps = {
@@ -45,6 +46,9 @@ class RollDice extends Component {
           <Die face={this.state.die1} />
           <Die face={this.state.die2} />
         </div>
+        {this.state.die1 === this.state.die2 && (
+          <p>DOUBLES!!! YOU GET ANOTHER ROLL</p>
+        )}
         <div className="Dice-Counter">
           <h4>
             Rolls: <span>{this.state.numRoll}</span>
